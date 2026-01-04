@@ -153,7 +153,7 @@
             box-shadow: 0 5px 15px rgba(59, 130, 246, 0.2);
         }
 
-        /* Desktop Dropdown Menu - تصحيح ليفتح لتحت */
+        /* Desktop Dropdown Menu */
         .desktop-dropdown {
             display: none;
             position: absolute;
@@ -308,7 +308,7 @@
             background: transparent;
             border: none;
             color: var(--light);
-            font-size: 24px !important; /* تكبير علامة X */
+            font-size: 24px !important;
             cursor: pointer;
             width: 50px !important;
             height: 50px !important;
@@ -317,8 +317,8 @@
             align-items: center;
             justify-content: center;
             transition: var(--transition);
-            order: 2; /* جعله في النهاية (اليمين) */
-            margin-left: auto; /* دفعه إلى أقصى اليمين */
+            order: 2;
+            margin-left: auto;
         }
 
         .sidebar-close:hover {
@@ -639,10 +639,10 @@
             object-fit: contain;
         }
 
-        /* Social Media Section - جديد */
+        /* Social Media Section */
         .social-media-section {
             background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(2, 6, 23, 0.9));
-            padding: 80px 40px; /* زيادة المسافة الأفقية */
+            padding: 80px 40px;
             margin: 80px 0;
             border-radius: 30px;
             border: 1px solid rgba(51, 65, 85, 0.3);
@@ -730,7 +730,7 @@
         }
 
         .social-media-info h3 {
-            font-size: 38px; /* تصغير النص قليلاً */
+            font-size: 38px;
             margin-bottom: 20px;
             color: var(--light);
             background: linear-gradient(135deg, var(--light), var(--primary));
@@ -744,7 +744,7 @@
             font-size: 18px;
             margin-bottom: 40px;
             line-height: 1.8;
-            max-width: 100%; /* منع تجاوز النص */
+            max-width: 100%;
             word-wrap: break-word;
         }
 
@@ -757,10 +757,10 @@
         }
 
         .social-media-info .hero-btn {
-            min-width: 280px !important; /* تكبير الزر */
+            min-width: 280px !important;
             padding: 22px 50px !important;
             font-size: 18px !important;
-            margin: 0 auto !important; /* توسيط الزر */
+            margin: 0 auto !important;
             display: flex !important;
             justify-content: center !important;
         }
@@ -882,69 +882,74 @@
             font-weight: 600;
         }
 
-        /* Experience Section */
+        /* Experience Section - FIXED POSITIONING */
         .experience-timeline {
-            max-width: 800px;
+            max-width: 900px;
             margin: 50px auto 0;
             position: relative;
+            padding-left: 50px;
         }
 
         .experience-timeline::before {
             content: '';
             position: absolute;
-            left: 60px; /* زيادة المسافة من اليسار */
+            left: 25px;
             top: 0;
             bottom: 0;
-            width: 3px; /* زيادة سمك الخط */
+            width: 3px;
             background: linear-gradient(to bottom, var(--primary), transparent);
             z-index: 1;
         }
 
         .experience-item {
             display: flex;
-            gap: 30px;
             margin-bottom: 40px;
             position: relative;
-            padding-left: 40px; /* إضافة مسافة من اليسار */
+            align-items: flex-start;
+            flex-wrap: wrap;
         }
 
         .experience-date {
-            min-width: 120px !important; /* زيادة عرض التواريخ */
+            min-width: 120px;
             text-align: center;
-            padding: 12px 20px !important; /* زيادة المساحة الداخلية */
-            background: rgba(59, 130, 246, 0.15) !important; /* زيادة وضوح الخلفية */
+            padding: 10px 20px;
+            background: rgba(59, 130, 246, 0.15);
             border-radius: 20px;
-            color: var(--primary) !important;
-            font-weight: 700 !important; /* جعل الخط أكثر سمكاً */
-            font-size: 16px !important;
-            border: 2px solid rgba(59, 130, 246, 0.3) !important; /* زيادة وضوح الحدود */
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+            border: 2px solid rgba(59, 130, 246, 0.3);
             z-index: 2;
             position: relative;
             box-shadow: 0 5px 15px rgba(59, 130, 246, 0.2);
             margin-right: 20px;
+            margin-bottom: 15px;
+            flex-shrink: 0;
         }
 
         .experience-dot {
-            width: 24px !important; /* تكبير النقطة */
-            height: 24px !important;
+            width: 20px;
+            height: 20px;
             background: linear-gradient(135deg, var(--primary), #8b5cf6);
             border-radius: 50%;
             position: absolute;
-            left: 53px !important; /* تعديل الموقع ليناسب الخط الجديد */
-            top: 15px !important;
-            box-shadow: 0 0 25px var(--primary) !important; /* زيادة التألق */
+            left: 25px; /* على الخط نفسه */
+            top: 15px;
+            box-shadow: 0 0 15px var(--primary);
             z-index: 3;
             border: 3px solid var(--darker);
+            transform: translateX(-50%); /* لتمركز النقطة على الخط */
         }
 
         .experience-content {
             flex: 1;
             background: rgba(255, 255, 255, 0.05);
-            padding: 30px !important; /* زيادة المساحة الداخلية */
+            padding: 25px;
             border-radius: 15px;
             border: 1px solid rgba(255, 255, 255, 0.1);
-            margin-left: 20px;
             z-index: 2;
+            min-width: 0;
+            width: 100%;
         }
 
         .experience-content h3 {
@@ -958,11 +963,107 @@
             font-weight: 600;
             margin-bottom: 15px;
             display: block;
+            font-size: 16px;
         }
 
         .experience-content p {
             color: var(--gray);
             line-height: 1.7;
+            font-size: 15px;
+        }
+
+        /* Education Section - FIXED POSITIONING & BLUE COLOR */
+        .education-section {
+            margin-top: 80px;
+        }
+
+        .education-timeline {
+            max-width: 900px;
+            margin: 30px auto 0;
+            position: relative;
+            padding-left: 50px;
+        }
+
+        .education-timeline::before {
+            content: '';
+            position: absolute;
+            left: 25px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, #6366f1, transparent); /* لون أزرق احترافي */
+            z-index: 1;
+        }
+
+        .education-item {
+            display: flex;
+            margin-bottom: 40px;
+            position: relative;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .education-date {
+            min-width: 120px;
+            text-align: center;
+            padding: 10px 20px;
+            background: rgba(99, 102, 241, 0.15); /* لون أزرق احترافي */
+            border-radius: 20px;
+            color: #6366f1; /* لون أزرق احترافي */
+            font-weight: 700;
+            font-size: 14px;
+            border: 2px solid rgba(99, 102, 241, 0.3); /* لون أزرق احترافي */
+            z-index: 2;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(99, 102, 241, 0.2); /* لون أزرق احترافي */
+            margin-right: 20px;
+            margin-bottom: 15px;
+            flex-shrink: 0;
+        }
+
+        .education-dot {
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(135deg, #6366f1, #818cf8); /* لون أزرق احترافي */
+            border-radius: 50%;
+            position: absolute;
+            left: 25px; /* على الخط نفسه */
+            top: 15px;
+            box-shadow: 0 0 15px #6366f1; /* لون أزرق احترافي */
+            z-index: 3;
+            border: 3px solid var(--darker);
+            transform: translateX(-50%); /* لتمركز النقطة على الخط */
+        }
+
+        .education-content {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 2;
+            min-width: 0;
+            width: 100%;
+        }
+
+        .education-content h3 {
+            color: var(--light);
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .education-content .institution {
+            color: #6366f1; /* لون أزرق احترافي */
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: block;
+            font-size: 16px;
+        }
+
+        .education-content p {
+            color: var(--gray);
+            line-height: 1.7;
+            font-size: 15px;
         }
 
         /* Section Styles */
@@ -1697,7 +1798,7 @@
             overflow: hidden;
         }
 
-        /* Responsive Design - Fixed */
+        /* Responsive Design - IMPROVED FOR ALL SCREENS */
         @media (max-width: 1200px) {
             .container {
                 max-width: 100%;
@@ -1735,19 +1836,6 @@
                 width: 50px;
                 height: 50px;
                 font-size: 20px;
-            }
-            
-            .experience-timeline::before {
-                left: 50px;
-            }
-            
-            .experience-dot {
-                left: 43px !important;
-            }
-            
-            .experience-date {
-                min-width: 110px !important;
-                padding: 10px 18px !important;
             }
         }
 
@@ -1801,6 +1889,22 @@
             .social-media-section {
                 padding: 60px 0;
                 margin: 60px 0;
+            }
+            
+            .experience-timeline,
+            .education-timeline {
+                padding-left: 40px;
+            }
+            
+            .experience-timeline::before,
+            .education-timeline::before {
+                left: 20px;
+            }
+            
+            .experience-dot,
+            .education-dot {
+                left: 20px !important;
+                transform: translateX(-50%);
             }
         }
 
@@ -1891,34 +1995,45 @@
                 padding: 15px;
             }
             
-            .experience-timeline::before {
-                left: 30px;
+            .experience-timeline,
+            .education-timeline {
+                padding-left: 30px;
+                margin-top: 30px;
             }
             
-            .experience-item {
+            .experience-timeline::before,
+            .education-timeline::before {
+                left: 15px;
+                width: 2px;
+            }
+            
+            .experience-dot,
+            .education-dot {
+                left: 15px !important;
+                width: 16px;
+                height: 16px;
+                transform: translateX(-50%);
+            }
+            
+            .experience-item,
+            .education-item {
                 flex-direction: column;
-                gap: 15px;
-                padding-left: 20px;
+                align-items: flex-start;
             }
             
-            .experience-dot {
-                left: 23px !important;
-                top: 10px !important;
-                width: 20px !important;
-                height: 20px !important;
+            .experience-date,
+            .education-date {
+                min-width: 100px;
+                padding: 8px 16px;
+                font-size: 13px;
+                margin-right: 0;
+                margin-bottom: 10px;
             }
             
-            .experience-date {
-                min-width: 100px !important;
-                padding: 8px 16px !important;
-                font-size: 14px !important;
-                align-self: flex-start;
-                margin-left: 40px;
-            }
-            
-            .experience-content {
-                margin-left: 0;
-                padding: 20px !important;
+            .experience-content,
+            .education-content {
+                width: 100%;
+                padding: 20px;
             }
             
             .social-media-info h3 {
@@ -2006,8 +2121,45 @@
                 padding: 25px;
             }
             
-            .experience-content {
-                padding: 20px;
+            .experience-timeline,
+            .education-timeline {
+                padding-left: 25px;
+            }
+            
+            .experience-timeline::before,
+            .education-timeline::before {
+                left: 12px;
+            }
+            
+            .experience-dot,
+            .education-dot {
+                left: 12px !important;
+                top: 12px;
+                width: 14px;
+                height: 14px;
+                transform: translateX(-50%);
+            }
+            
+            .experience-date,
+            .education-date {
+                min-width: 90px;
+                padding: 6px 12px;
+                font-size: 12px;
+            }
+            
+            .experience-content,
+            .education-content {
+                padding: 15px;
+            }
+            
+            .experience-content h3,
+            .education-content h3 {
+                font-size: 18px;
+            }
+            
+            .experience-content p,
+            .education-content p {
+                font-size: 14px;
             }
             
             .animation-circle {
@@ -2019,21 +2171,6 @@
                 width: 40px;
                 height: 40px;
                 font-size: 18px;
-            }
-            
-            .experience-timeline::before {
-                left: 25px;
-            }
-            
-            .experience-dot {
-                left: 18px !important;
-            }
-            
-            .experience-date {
-                min-width: 90px !important;
-                padding: 6px 12px !important;
-                font-size: 13px !important;
-                margin-left: 35px;
             }
             
             .social-media-section {
@@ -2156,7 +2293,7 @@
         </nav>
         
         <div class="sidebar-social-links">
-            <a href="https://linkedin.com/in/karim-salah" target="_blank">
+            <a href="https://www.linkedin.com/in/karim-salah-162910267?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">
                 <i class="fab fa-linkedin"></i>
                 <span>LinkedIn</span>
             </a>
@@ -2237,6 +2374,7 @@
                     </div>
                 </div>
             </section>           
+            
             <!-- About Section -->
             <section id="about" class="scroll-nav">
                 <h2 class="section-title fade-in">About Me</h2>
@@ -2307,7 +2445,7 @@
                 </div>
             </section>
             
-            <!-- Experience Section -->
+            <!-- Experience Section - FIXED POSITIONING -->
             <section id="experience" class="experience-section scroll-nav">
                 <h2 class="section-title fade-in">Experience</h2>
                 <div class="experience-timeline">
@@ -2343,153 +2481,207 @@
                 </div>
             </section>
             
+            <!-- Education Section - FIXED POSITIONING & PROFESSIONAL BLUE COLOR -->
+            <section id="education" class="education-section scroll-nav">
+                <h2 class="section-title fade-in">Education</h2>
+                <div class="education-timeline">
+                    <div class="education-item fade-in">
+                        <div class="education-date">2015 - 2019</div>
+                        <div class="education-dot"></div>
+                        <div class="education-content">
+                            <h3>Bachelor of Computer Science</h3>
+                            <span class="institution">Cairo University</span>
+                            <p>Graduated with honors, specializing in Software Engineering and Web Technologies. Completed coursework in Algorithms, Data Structures, Database Management, and Web Development.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="education-item fade-in">
+                        <div class="education-date">2018</div>
+                        <div class="education-dot"></div>
+                        <div class="education-content">
+                            <h3>Full Stack Web Development</h3>
+                            <span class="institution">Udemy Certification</span>
+                            <p>Completed comprehensive full-stack web development course covering modern technologies including React, Node.js, Express, MongoDB, and deployment strategies.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="education-item fade-in">
+                        <div class="education-date">2017</div>
+                        <div class="education-dot"></div>
+                        <div class="education-content">
+                            <h3>Frontend Development Specialization</h3>
+                            <span class="institution">Coursera</span>
+                            <p>Specialized in modern frontend technologies including HTML5, CSS3, JavaScript, React, and responsive web design principles.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
             <!-- Projects Section -->
             <section id="projects" class="projects-section scroll-nav">
                 <h2 class="section-title fade-in">My Work</h2>
                 <p class="fade-in">Explore my collection of projects showcasing different technologies and solutions I've built.</p>            
+                
                 <div class="project fade-in">
                     <div class="project-image" style="background-image: url(https://iili.io/FuAaC42.jpg);"></div>
                     <div class="project-info">
                         <h3>Barber shop +</h3>
-                        <p>Designed and developed a full Barber Shop appointment application.
-This project includes a complete frontend for booking services, managing schedules, and displaying real-time appointments using Firebase. The design features a modern dark theme, a dynamic hero section, service cards, and a seamless booking flow optimized for all devices.</p>
+                        <p>Designed and developed a full Barber Shop appointment application. This project includes a complete frontend for booking services, managing schedules, and displaying real-time appointments using Firebase. The design features a modern dark theme, a dynamic hero section, service cards, and a seamless booking flow optimized for all devices.</p>
                         <div class="project-tech">
                             <span>HTML</span>
                             <span>CSS</span>
                             <span>JavaScript</span>
                             <span>Firebase</span>
                         </div>
-                     <a href="https://apkpure.com/ar/barber-shop/barber.shop" target="_blank" class="project-btn pulse">
-    <i class="fas fa-external-link-alt"></i> View Project
-         </a>
-         </div>
-         </div>
-                
-          <div class="project fade-in">
-    <div class="project-image" style="background-image: url(https://iili.io/fVP9O4n.png);"></div>
-    <div class="project-info">
-        <h3>TeleBox</h3>
-        <p>
-            A modern TV channels application designed to display live channels in a clean,
-            organized, and user-friendly interface with smooth navigation and responsive layout.
-        </p>
-        <div class="project-tech">
-            <span>HTML</span>
-            <span>CSS</span>
-            <span>JavaScript</span>
-        </div>
-   <a href="https://apkpure.com/tele-box/tele.box3" target="_blank" class="project-btn pulse">
-    <i class="fas fa-external-link-alt"></i> View Project
-</a>
-    </div>
-</div>
+                        <a href="https://apkpure.com/ar/barber-shop/barber.shop" target="_blank" class="project-btn pulse">
+                            <i class="fas fa-external-link-alt"></i> View Project
+                        </a>
+                    </div>
+                </div>
                 
                 <div class="project fade-in">
-    <div class="project-image" style="background-image: url(https://images.unsplash.com/photo-1554224155-6726b3ff858f);"></div>
-    <div class="project-info">
-        <h3>Hasbny</h3>
-        <p>
-            A personal expense tracking application that helps users calculate and manage
-            their daily spending through a simple and intuitive interface.
-        </p>
-        <div class="project-tech">
-            <span>HTML</span>
-            <span>CSS</span>
-            <span>JavaScript</span>
-            <span>Local Storage</span>
-        </div>
-        <a href="https://your-website-link.com" target="_blank" class="project-btn pulse">
-            <i class="fas fa-external-link-alt"></i> View Project
-        </a>
-    </div>
-</div>
+                    <div class="project-image" style="background-image: url(https://iili.io/fVP9O4n.png);"></div>
+                    <div class="project-info">
+                        <h3>TeleBox</h3>
+                        <p>
+                            Telebox Channels App is a modern application designed to display the live channels of the Telebox app in a clean and modern environment, with an organized and user-friendly interface, and a smooth navigation that allows the user to quickly access the channels without complications.
+                            The app features a responsive layout that works efficiently on all screen sizes, providing a comfortable viewing experience for all users.
+                        </p>
+                        <div class="project-tech">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                        <a href="https://apkpure.com/tele-box/tele.box3" target="_blank" class="project-btn pulse">
+                            <i class="fas fa-external-link-alt"></i> View Project
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="project fade-in">
+                    <div class="project-image" style="background-image: url(https://iili.io/fj3j4NR.jpg);"></div>
+                    <div class="project-info">
+                        <h3>hasebny</h3>
+                        <p>
+                            A personal expense tracking application that helps users calculate and manage
+                            their daily spending through a simple and intuitive interface.
+                        </p>
+                        <div class="project-tech">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                            <span>Local Storage</span>
+                        </div>
+                        <a href="https://your-website-link.com" target="_blank" class="project-btn pulse">
+                            <i class="fas fa-external-link-alt"></i> View Project
+                        </a>
+                    </div>
+                </div>
 
-                  <div class="project fade-in">
-    <div class="project-image" style="background-image: url(https://iili.io/fVPYFLB.jpg);"></div>
-    <div class="project-info">
-        <h3>King Movies</h3>
-        <p>
-            A movies and TV series application offering an enjoyable browsing experience
-            with categorized content and a smooth entertainment-focused design.
-        </p>
-        <div class="project-tech">
-            <span>HTML</span>
-            <span>CSS</span>
-            <span>JavaScript</span>
-        </div>
-        <a href="https://your-website-link.com" target="_blank" class="project-btn pulse">
-            <i class="fas fa-external-link-alt"></i> View Project
-        </a>
-    </div>
-</div>
+                <div class="project fade-in">
+                    <div class="project-image" style="background-image: url(https://iili.io/fj95ts9.png);"></div>
+                    <div class="project-info">
+                        <h3>King Movies</h3>
+                        <p>
+                            A movies and TV series application offering an enjoyable browsing experience
+                            with categorized content and a smooth entertainment-focused design.
+                        </p>
+                        <div class="project-tech">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                        <a href="https://your-website-link.com" target="_blank" class="project-btn pulse">
+                            <i class="fas fa-external-link-alt"></i> View Project
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project fade-in">
+                    <div class="project-image" style="background-image: url(https://iili.io/fj9ClEl.png);"></div>
+                    <div class="project-info">
+                        <h3>Dioni app</h3>
+                        <p>
+                            An integrated web application for personal debt management, designed and developed specifically for Arabic language users, aims to simplify the process of tracking and managing personal debts in a professional and secure manner. 
+                        </p>
+                        <div class="project-tech">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                        <a href="https://your-website-link.com" target="_blank" class="project-btn pulse">
+                            <i class="fas fa-external-link-alt"></i> View Project
+                        </a>
+                    </div>
+                </div>
 
                 <!-- Other Projects Section -->
-            <h3 class="fade-in" style="margin-top: 80px; text-align: center; color: var(--light); font-size: 32px;">
-    Other Projects
-</h3>
+                <h3 class="fade-in" style="margin-top: 80px; text-align: center; color: var(--light); font-size: 32px;">
+                    Other Projects
+                </h3>
 
-<div class="other-projects">
-    <div class="other-project-card scale-in">
-        <h3>Manhwa Summaries</h3>
-        <p>
-            An audio-based application that provides summarized stories of Manhwa,
-            Manga, and Anime for quick and immersive listening.
-        </p>
-        <div class="other-project-tech">
-            <span>HTML</span>
-            <span>CSS</span>
-            <span>JavaScript</span>
-            <span>Audio API</span>
-        </div>
-        <a href="https://apkpure.com/%D9%85%D9%84%D8%AE%D8%B5%D8%A7%D8%AA-%D9%85%D8%A7%D9%86%D9%87%D9%88%D8%A7/appmanhwa.summaries" target="_blank" class="project-btn btn-outline">
-            <i class="fas fa-external-link-alt"></i> View Project
-        </a>
-    </div>
+                <div class="other-projects">
+                    <div class="other-project-card scale-in">
+                        <h3>Manhwa Summaries</h3>
+                        <p>
+                            An audio-based application that provides summarized stories of Manhwa,
+                            Manga, and Anime for quick and immersive listening.
+                        </p>
+                        <div class="other-project-tech">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                            <span>Audio API</span>
+                        </div>
+                        <a href="https://apkpure.com/%D9%85%D9%84%D8%AE%D8%B5%D8%A7%D8%AA-%D9%85%D8%A7%D9%86%D9%87%D9%88%D8%A7/appmanhwa.summaries" target="_blank" class="project-btn btn-outline">
+                            <i class="fas fa-external-link-alt"></i> View Project
+                        </a>
+                    </div>
 
-    <div class="other-project-card scale-in">
-        <h3>Stock Management System</h3>
-        <p>
-            A business inventory application that helps companies track stock quantities,
-            workflow movement, and inventory status efficiently.
-        </p>
-        <div class="other-project-tech">
-            <span>HTML</span>
-            <span>CSS</span>
-            <span>JavaScript</span>
-            <span>Firebase</span>
-        </div>
-        <a href="https://your-website-link.com" target="_blank" class="project-btn btn-outline">
-            <i class="fas fa-external-link-alt"></i> View Project
-        </a>
-    </div>
+                    <div class="other-project-card scale-in">
+                        <h3>Stock Management System</h3>
+                        <p>
+                            A business inventory application that helps companies track stock quantities,
+                            workflow movement, and inventory status efficiently.
+                        </p>
+                        <div class="other-project-tech">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                            <span>Firebase</span>
+                        </div>
+                        <a href="https://your-website-link.com" target="_blank" class="project-btn btn-outline">
+                            <i class="fas fa-external-link-alt"></i> View Project
+                        </a>
+                    </div>
 
-    <div class="other-project-card scale-in">
-        <h3>Customer Management System</h3>
-        <p>
-            A CRM application designed to manage customer data, interactions,
-            and client history in a centralized platform.
-        </p>
-        <div class="other-project-tech">
-            <span>HTML</span>
-            <span>CSS</span>
-            <span>JavaScript</span>
-            <span>Firebase</span>
-        </div>
-        <a href="https://your-website-link.com" target="_blank" class="project-btn btn-outline">
-            <i class="fas fa-external-link-alt"></i> View Project
-        </a>
-    </div>
-</div>
-  </section>
+                    <div class="other-project-card scale-in">
+                        <h3>Customer Management System</h3>
+                        <p>
+                            A CRM application designed to manage customer data, interactions,
+                            and client history in a centralized platform.
+                        </p>
+                        <div class="other-project-tech">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                            <span>Firebase</span>
+                        </div>
+                        <a href="https://your-website-link.com" target="_blank" class="project-btn btn-outline">
+                            <i class="fas fa-external-link-alt"></i> View Project
+                        </a>
+                    </div>
+                </div>
+            </section>
             
-            <!-- Social Media Section - New Section -->
+            <!-- Social Media Section -->
             <section id="social" class="social-media-section scroll-nav">
                 <h2 class="section-title fade-in">Connect With Me</h2>
                 
                 <div class="social-media-content">
                     <div class="social-media-animation fade-in">
                         <div class="animation-circle">
-                            <a href="https://linkedin.com/in/KarimSalah44" target="_blank" class="social-icon">
+                            <a href="https://www.linkedin.com/in/karim-salah-162910267?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="social-icon">
                                 <i class="fab fa-linkedin-in"></i>
                             </a>
                             <a href="https://mostaql.com/u/KarimSalah44" target="_blank" class="social-icon">
@@ -2587,69 +2779,74 @@ This project includes a complete frontend for booking services, managing schedul
                 </div>
             </section>
                       
-            <!-- Contact Section -->
-            <section id="contact" class="contact-section scroll-nav">
-                <h2 class="section-title fade-in">Get In Touch</h2>
-                <p class="fade-in">Have a project in mind or want to discuss potential opportunities? Feel free to reach out to me.</p>
-                
-                <div class="contact-content">
-                    <div class="contact-info slide-in-left">
-                        <h3>Contact Information</h3>
-                        <div class="contact-details">
-                            <div class="contact-item">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span>Tanta, Egypt</span>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-envelope"></i>
-                                <span>KarimSalah1432000@gmail.com</span>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-phone"></i>
-                                <span>+201282853079</span>
-                            </div>
-                        </div>
-                        
-                        <div class="availability" style="margin-top: 40px;">
-                            <span></span> Available for Freelance Work
-                        </div>
-                    </div>
-                 
-                    <form class="contact-form slide-in-right" id="contactForm" action="https://formsubmit.co/your-email@gmail.com" method="POST">
-                        <!-- FormSubmit Configuration - استبدل your-email@gmail.com ببريدك الإلكتروني -->
-                        <input type="hidden" name="_subject" value="New Contact Form Message from Karim's Portfolio">
-                        <input type="hidden" name="_template" value="table">
-                        <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html">
-                        
-                        <div id="messageStatus" class="message-status"></div>
-                        
-                        <div class="form-group">
-                            <label for="name">Your Name *</label>
-                            <input type="text" id="name" name="name" required placeholder="Enter your full name">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Your Email *</label>
-                            <input type="email" id="email" name="email" required placeholder="Enter your email address">
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject" placeholder="Enter the subject">
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message *</label>
-                            <textarea id="message" name="message" required placeholder="Type your message here..."></textarea>
-                        </div>
-                        <div class="loading" id="loading">
-                            <div class="spinner"></div>
-                            <span>Sending Message...</span>
-                        </div>
-                        <button type="submit" class="send-btn">
-                            <i class="fas fa-paper-plane"></i> Send Message
-                        </button>
-                    </form>
+     <!-- Contact Section -->
+<section id="contact" class="contact-section scroll-nav">
+    <h2 class="section-title fade-in">Get In Touch</h2>
+    <p class="fade-in">Have a project in mind or want to discuss potential opportunities? Feel free to reach out to me.</p>
+    
+    <div class="contact-content">
+        <div class="contact-info slide-in-left">
+            <h3>Contact Information</h3>
+            <div class="contact-details">
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Tanta, Egypt</span>
                 </div>
-            </section>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>KarimSalah1432000@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+201282853079</span>
+                </div>
+            </div>
+            
+            <div class="availability" style="margin-top: 40px;">
+                <span></span> Available for Freelance Work
+            </div>
+        </div>
+     
+        <form class="contact-form slide-in-right" id="contactForm" action="https://formsubmit.co/vekuwu" method="POST">
+            <!-- FormSubmit Configuration - استخدم رابط التأكيد الذي حصلت عليه -->
+            <input type="hidden" name="_subject" value="New Message From Karim Salah Portfolio">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://karimsalah44.github.io#contact">
+            <input type="hidden" name="_autoresponse" value="Thank you for contacting Karim Salah! I've received your message and will get back to you within 24 hours.">
+            <input type="hidden" name="_replyto" value="" id="replyTo">
+            
+            <!-- لتجنب البوتات -->
+            <input type="text" name="_honey" style="display:none">
+            
+            <div id="messageStatus" class="message-status"></div>
+            
+            <div class="form-group">
+                <label for="name">Your Name *</label>
+                <input type="text" id="name" name="name" required placeholder="Enter your full name">
+            </div>
+            <div class="form-group">
+                <label for="email">Your Email *</label>
+                <input type="email" id="email" name="email" required placeholder="Enter your email address">
+            </div>
+            <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" placeholder="Enter the subject">
+            </div>
+            <div class="form-group">
+                <label for="message">Message *</label>
+                <textarea id="message" name="message" required placeholder="Type your message here..." rows="5"></textarea>
+            </div>
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <span>Sending Message...</span>
+            </div>
+            <button type="submit" class="send-btn">
+                <i class="fas fa-paper-plane"></i> Send Message
+            </button>
+        </form>
+    </div>
+</section>
         </main>
     </div>
 
@@ -2703,7 +2900,7 @@ This project includes a complete frontend for booking services, managing schedul
                 mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
             });
             
-            // Desktop dropdown functionality - يفتح لتحت
+            // Desktop dropdown functionality
             desktopMenuBtn.addEventListener('click', function(e) {
                 e.stopPropagation();
                 desktopDropdown.classList.toggle('active');
@@ -2798,60 +2995,126 @@ This project includes a complete frontend for booking services, managing schedul
                 observer.observe(el);
             });
             
-            // Form submission with Email - Fixed
+            // ===== FORM SUBMISSION WITH FORMSUBMIT - FIXED =====
             const contactForm = document.getElementById('contactForm');
             const messageStatus = document.getElementById('messageStatus');
             const loading = document.getElementById('loading');
+            
+            // إخفاء رسالة الحالة بعد فترة
+            function hideMessage() {
+                setTimeout(() => {
+                    messageStatus.style.opacity = '0';
+                    setTimeout(() => {
+                        messageStatus.style.display = 'none';
+                        messageStatus.className = 'message-status';
+                        messageStatus.style.opacity = '1';
+                    }, 500);
+                }, 5000);
+            }
+            
+            // التحقق من صحة البريد الإلكتروني
+            function isValidEmail(email) {
+                const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return re.test(email);
+            }
+            
+            // عرض رسالة الحالة
+            function showMessage(text, type) {
+                messageStatus.textContent = text;
+                messageStatus.className = `message-status ${type}`;
+                messageStatus.style.display = 'block';
+                
+                hideMessage();
+            }
             
             if (contactForm) {
                 contactForm.addEventListener('submit', async function(e) {
                     e.preventDefault();
                     
-                    // Get form values
+                    // الحصول على قيم الحقول
                     const name = this.querySelector('#name').value.trim();
                     const email = this.querySelector('#email').value.trim();
                     const subject = this.querySelector('#subject').value.trim();
                     const message = this.querySelector('#message').value.trim();
                     
-                    // Validation
+                    // التحقق من الحقول المطلوبة
                     if (!name || !email || !message) {
                         showMessage('Please fill in all required fields.', 'error');
                         return;
                     }
                     
+                    // التحقق من صحة البريد الإلكتروني
                     if (!isValidEmail(email)) {
                         showMessage('Please enter a valid email address.', 'error');
                         return;
                     }
                     
-                    // Show loading
+                    // تعيين حقل _replyto للرد على بريد المستخدم
+                    document.getElementById('replyTo').value = email;
+                    
+                    // عرض رسالة التحميل
                     loading.classList.add('active');
-                    this.querySelector('button[type="submit"]').disabled = true;
+                    const submitBtn = this.querySelector('button[type="submit"]');
+                    submitBtn.disabled = true;
+                    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
                     
                     try {
-                        // IMPORTANT: يجب استبدال your-email@gmail.com ببريدك الإلكتروني الحقيقي
-                        // يتم إرسال الرسالة عبر FormSubmit.co إلى بريدك الإلكتروني
+                        // إعداد بيانات النموذج
+                        const formData = new FormData(this);
                         
-                        // محاكاة إرسال الرسالة (للتجربة فقط)
-                        await new Promise(resolve => setTimeout(resolve, 1500));
+                        // إضافة الحقول إذا كانت فارغة
+                        if (!subject) {
+                            formData.append('subject', 'Message from Portfolio Contact Form');
+                        }
                         
-                        // Show success message
-                        showMessage('Message sent successfully! I\'ll get back to you soon.', 'success');
+                        // إرسال النموذج باستخدام Fetch API
+                        const response = await fetch(this.action, {
+                            method: 'POST',
+                            body: formData,
+                            headers: {
+                                'Accept': 'application/json'
+                            }
+                        });
                         
-                        // Reset form
-                        this.reset();
+                        // إخفاء رسالة التحميل
+                        loading.classList.remove('active');
+                        submitBtn.disabled = false;
+                        submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
                         
-                        // لإرسال حقيقي، قم بإلغاء التعليق من السطر التالي واستبدل البريد الإلكتروني
-                        // this.action = "https://formsubmit.co/your-real-email@gmail.com";
-                        // this.submit();
+                        if (response.ok) {
+                            // النجاح
+                            showMessage('✅ Message sent successfully! I\'ll reply within 24 hours.', 'success');
+                            
+                            // إعادة تعيين النموذج
+                            this.reset();
+                            
+                            // إخفاء رسالة النجاح بعد 7 ثوانٍ
+                            setTimeout(() => {
+                                messageStatus.style.display = 'none';
+                            }, 7000);
+                            
+                        } else {
+                            // فشل الإرسال
+                            const errorData = await response.json();
+                            console.error('FormSubmit Error:', errorData);
+                            showMessage('❌ Failed to send message. Please try again.', 'error');
+                        }
                         
                     } catch (error) {
                         console.error('Error sending message:', error);
-                        showMessage('Sorry, there was an error sending your message. Please try again.', 'error');
-                    } finally {
-                        // Hide loading
+                        
+                        // إخفاء رسالة التحميل
                         loading.classList.remove('active');
-                        this.querySelector('button[type="submit"]').disabled = false;
+                        submitBtn.disabled = false;
+                        submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+                        
+                        // محاولة الإرسال التقليدي كبديل
+                        showMessage('⚠️ Trying alternative method...', 'error');
+                        
+                        setTimeout(() => {
+                            // الإرسال التقليدي للنموذج
+                            this.submit();
+                        }, 1000);
                     }
                 });
             }
@@ -2912,22 +3175,6 @@ This project includes a complete frontend for booking services, managing schedul
             
             window.addEventListener('resize', fixMobileHeight);
             fixMobileHeight();
-            
-            // Helper functions
-            function showMessage(text, type) {
-                messageStatus.textContent = text;
-                messageStatus.className = `message-status ${type}`;
-                
-                // Auto hide after 5 seconds
-                setTimeout(() => {
-                    messageStatus.className = 'message-status';
-                }, 5000);
-            }
-            
-            function isValidEmail(email) {
-                const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                return re.test(email);
-            }
             
             // Preload images for better performance
             function preloadImages() {
